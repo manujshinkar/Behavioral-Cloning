@@ -23,9 +23,10 @@ model = None
 prev_image_array = None
 
 def preprocess_image(img):
-	new_img = img[50:140,:,:]
-	new_img = cv2.resize(img,(200, 66), interpolation = cv2.INTER_AREA)
-	return new_img
+    new_img = img[50:140,:,:]
+    new_img = cv2.resize(new_img ,(200, 66), interpolation = cv2.INTER_AREA)
+    new_img = cv2.cvtColor(new_img, cv2.COLOR_RGB2YUV)
+    return new_img
 
 class SimplePIController:
     def __init__(self, Kp, Ki):
@@ -66,8 +67,9 @@ def telemetry(sid, data):
         imgString = data["image"]
         image = Image.open(BytesIO(base64.b64decode(imgString)))
         image_array = np.asarray(image)
-        #processed_image_array = preprocess_image(image_array)
-        steering_angle = float(model.predict(image_array[None, :, :, :], batch_size=1))
+        processed_image = preprocess_image(image_array)
+        processed_image_array = processed_image[None, :, :, :]
+        steering_angle = float(model.predict(processed_image_array, batch_size=1))
 
         throttle = controller.update(float(speed))
 

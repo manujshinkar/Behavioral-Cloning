@@ -17,6 +17,13 @@ Using the Udacity provided simulator and my drive.py file, the car can be driven
 ```sh
 python drive.py model.h5
 ```
+The model.py file contains the code for training and saving the convolution neural network. The file shows the pipeline I used for training and validating the model, and it contains comments to explain how the code works.
+
+Model Architecture and Training Strategy
+---
+In this project I have used the model architecture from Nvidia for training self-driving car. I used this model as a base and made slight changes for my project. The Nvidia architecture is explained in [this](https://images.nvidia.com/content/tegra/automotive/images/2016/solutions/pdf/end-to-end-dl-using-px.pdf) paper.
+
+<img src="./Images/nVidia_model.png?raw=true" width="400px">
 
 
 Conclusion

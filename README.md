@@ -2,7 +2,7 @@
 
 Overview
 ---
-This repository contains starting files for the Behavioral Cloning Project.
+This repository contains files for the Behavioral Cloning Project.
 
 In this project, I have learned about deep neural networks and convolutional neural networks to clone driving behavior. I have trained, validated and tested a model using Keras. The model outputs a steering angle to an autonomous vehicle.
 

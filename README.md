@@ -55,6 +55,11 @@ Right:
 
 Initialy I used the center camera images only to train. The car did not drive well. I then used all the three camera images. For left and right camera I used a steering factor correction factor of 0.25. Then I flipped all the images and measurements to increase my training dataset. Now I have close to 48000 images for training. This was a very helpful step. It worked really well. 
 
+Original:
+<img src="./Images/origional.png?raw=true" width="200px">
+Flipped:
+<img src="./Images/flipped.png?raw=true" width="200px">
+
 In order to gauge how well the model was working, I split my image and steering angle data into a training and validation set. I shuffle the data and use 20% for validation.
 
 I used this training data for training the model. The validation set helped determine if the model was over or under fitting. The ideal number of epochs was 5. I used an adam optimizer so that manually training the learning rate wasn’t necessary.
@@ -63,7 +68,10 @@ I used this training data for training the model. The validation set helped dete
 
 The images from the simulator contains extra information such as sky and part of the car as we can see in the above camera images. So I cropped the images from top and bottom. 
 
-<img src="./Images/cropped_image.jpg?raw=true" width="200px">
+Original:
+<img src="./Images/origional.png?raw=true" width="200px">
+Cropped:
+<img src="./Images/cropped.png?raw=true" width="200px">
 
 The Nvidia architecture take images of size 200 x 66. So after Cropping the images they are resized. 
 

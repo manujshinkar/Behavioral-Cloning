@@ -59,6 +59,15 @@ In order to gauge how well the model was working, I split my image and steering 
 
 ### Data Processing
 
+The images from the simulator contains extra information such as sky and part of the car as we can see in the above camera images. So I cropped the images from top and bottom. 
+
+<img src="./Images/cropped_image.jpg?raw=true" width="200px">
+
+The Nvidia architecture take images of size 200 x 66. So after Cropping the images they are resized. 
+
+The Simulator gives images in RGB format in drive.py and the cv2.imread reads images in BGR in model.py. So in both the files the images are converted to YUV format as suggested in the Nvidia paper.
+
+After the preprocessing the images are fed to the model which performs normalization so it is not included in the preprocessing step in drive.py.
 
 
 Conclusion

@@ -46,9 +46,12 @@ Training Strategy
 ### Data Collection and augmentation
 I used the udacity provided data for training. The dataset has images from center, left and right cameras. Around 8000 from each camera.  
 
-<img src="./Images/left.png?raw=true" width="100px">
-<img src="./Images/center.png?raw=true" width="100px">
-<img src="./Images/right.png?raw=true" width="100px">
+Left:
+<img src="./Images/left.jpg?raw=true" width="200px">
+Center:
+<img src="./Images/center.jpg?raw=true" width="200px">
+Right:
+<img src="./Images/right.jpg?raw=true" width="200px">
 
 Initialy I used the center camera images only to train. The car did not drive well. I then used all the three camera images. For left and right camera I used a steering factor correction factor of 0.25. Then I flipped all the images and measurements to increase my training dataset. Now I have close to 48000 images for training. This was a very helpful step. It worked really well. 
 

@@ -70,6 +70,14 @@ The Simulator gives images in RGB format in drive.py and the cv2.imread reads im
 After the preprocessing the images are fed to the model which performs normalization so it is not included in the preprocessing step in drive.py.
 
 
+=======
+After the collection process, I had X number of data points. I then preprocessed this data by …
+
+I finally randomly shuffled the data set and put Y% of the data into a validation set.
+
+I used this training data for training the model. The validation set helped determine if the model was over or under fitting. The ideal number of epochs was Z as evidenced by … I used an adam optimizer so that manually training the learning rate wasn’t necessary.
+=====
+
 Conclusion
 ---
 In this project, I have learned about deep neural networks and convolutional neural networks to clone driving behavior. I have trained, validated and tested a model using Keras. The model outputs a steering angle to an autonomous vehicle.

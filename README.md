@@ -25,6 +25,21 @@ In this project I have used the model architecture from Nvidia for training self
 
 <img src="./Images/nVidia_model.png?raw=true" width="400px">
 
+I started by implementing this architecture as follows:
+* Image normalization using a Keras Lambda function so that all pixels fall in range of -1 to 1
+* Three 5x5 convolution layers with 2X2 striding
+* Two 3x3 convolution layers 
+* Three fully-connected layers 
+
+Since the paper does not talk about activation functions I started with RELU activation on all convolution and fully connected layers.
+
+Initially I started with the udacity provided dataset without augmentation. I trained this model for 10 epochs. I found that my first model had a low mean squared error on the training set but a high mean squared error on the validation set. This implied that the model was overfitting. 
+To combat the overfitting I provided augmented data to the model. Now I observed that the validation loss was reducing for 6 epochs and the oscillating.
+I then trained trained the model for 5 epochs. The validation loss is relatively less than the preivous implementation. I tested this model on the simulator. The car drives good, however it tends to go slight outside on the turns.
+After this I added L2 regularization on all the convolutional and fully connected layers and changed RELU activations to ELU.
+Now the training and validation loss and very less as compared to the previous implementation and the car drives smoothly on the simulator. 
+
+
 
 Conclusion
 ---
